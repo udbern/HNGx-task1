@@ -9,18 +9,36 @@
 </head>
 
 <body>
-    <div>
-        <h1 data-testid="slackUserName">uduakabsi bernard</h1>
-        <div class="profile  ">
-            <div class="card">
+    <div class="main">
+        <div class="profile">
+            <div class="container">
                 <div class="image">
                     <img src="img/edwin.jpg" alt="Edwin.png" data-testid="slackDisplayImage">
                 </div>
-                <div class="info">
-                    <p data-testid="currentDayOfTheWeek">currentDayOfTheWeek</p>
-                    <p data-testid="currentUTCTime">currentUTCTime</p>
-                    <p data-testid="myTrack" class="myTrack">Frontend</p>
-                    <a href="https://github.com/udbern/HNGx-task1" data-testid="githubURL">Github link</a>
+                <div class="card ">
+                    <div class="item" data-testid="slackUserName">
+                        <label>SlackName:</label>
+                        <span>uduakabsi bernard</span>
+                    </div>
+                    <div class="item" data-testid="currentDayOfTheWeek">
+                        <label>currentDayOfTheWeek:</label>
+                        <span id="currentDay"></span>
+                    </div>
+                    <div class="item" data-testid="currentUTCTime">
+                        <label>current UTC Time:</label>
+                        <span id="currentUTC"></span>
+                    </div>
+                    <div class="item"data-testid="myTrack">
+                        <label>Track:</label>
+                        <span>front End</span>
+                    </div>
+                    <div class="item"data-testid="githubURL">
+                        <a href="https://github.com/udbern/HNGx-task1" >Github link</a>
+                    </div>
+                    
+                    
+                    
+                    
                 </div>
             </div>
 

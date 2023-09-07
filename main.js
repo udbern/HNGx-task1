@@ -1,11 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const currentDayOfTheWeek = document.querySelector(
-    '[data-testid="currentDayOfTheWeek"]'
-  );
-  const currentUTCTime = document.querySelector(
-    '[data-testid="currentUTCTime"]'
-  );
-
+function updateDateTime() {
   const daysOfWeek = [
     "Sunday",
     "Monday",
@@ -16,9 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
     "Saturday",
   ];
   const currentDate = new Date();
-  const dayIndex = currentDate.getUTCDay();
-  currentDayOfTheWeek.textContent = daysOfWeek[dayIndex];
-
-  const utcTime = currentDate.getTime();
-  currentUTCTime.textContent = `Time: ${utcTime}`;
-});
+  const currentDay = daysOfWeek[currentDate.getUTCDay()];
+  const currentUTC = currentDate.getTime();
+  document.getElementById("currentDay").textContent = currentDay;
+  document.getElementById("currentUTC").textContent = currentUTC;
+}
+updateDateTime();
+setInterval(updateDateTime, 1000);
