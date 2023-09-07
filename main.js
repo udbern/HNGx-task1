@@ -1,36 +1,24 @@
-const today = new Date();
-const dayOfWeek = today.getDay();
-const dayOfWeekString =
-  dayOfWeek === 0
-    ? "Sunday"
-    : dayOfWeek === 1
-    ? "Monday"
-    : dayOfWeek === 2
-    ? "Tuesday"
-    : dayOfWeek === 3
-    ? "Wednesday"
-    : dayOfWeek === 4
-    ? "Thursday"
-    : dayOfWeek === 5
-    ? "Friday"
-    : dayOfWeek === 6
-    ? "Saturday"
-    : dayOfWeek === 7
+document.addEventListener("DOMContentLoaded", function () {
+  const currentDayOfTheWeek = document.querySelector(
+    '[data-testid="currentDayOfTheWeek"]'
+  );
+  const currentUTCTime = document.querySelector(
+    '[data-testid="currentUTCTime"]'
+  );
 
-const currentTime = new Date().getTime();
-const formattedTime = new Date(currentTime).toLocaleString("en-US", {
-  timeZone: "UTC",
-  hour: "numeric",
-  minute: "numeric",
-  second: "numeric",
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const currentDate = new Date();
+  const dayIndex = currentDate.getUTCDay();
+  currentDayOfTheWeek.textContent = daysOfWeek[dayIndex];
+
+  const utcTime = currentDate.getTime();
+  currentUTCTime.textContent = `Time: ${utcTime}`;
 });
-
-const currentDayOfTheWeekElement = document.querySelector(
-  `p[data-testid="currentDayOfTheWeek"]`
-);
-currentDayOfTheWeekElement.textContent = ` ${dayOfWeekString}`;
-
-const currentUTCTimeElement = document.querySelector(
-  `p[data-testid="currentUTCTime"]`
-);
-currentUTCTimeElement.textContent = ` ${formattedTime}`;
