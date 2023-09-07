@@ -13,7 +13,9 @@ const dayOfWeekString =
     ? "Thursday"
     : dayOfWeek === 5
     ? "Friday"
-    : "Saturday";
+    : dayOfWeek === 6
+    ? "Saturday"
+    : dayOfWeek === 7
 
 const currentTime = new Date().getTime();
 const formattedTime = new Date(currentTime).toLocaleString("en-US", {
