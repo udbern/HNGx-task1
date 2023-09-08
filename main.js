@@ -1,7 +1,7 @@
-const labelDay = document.querySelector(".day");
-const labelTime = document.querySelector(".time");
+const labelDay = document.querySelector(".currentDay");
+const labelTime = document.querySelector(".currentUTC");
 
-const weekDays = [
+const Days = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -19,7 +19,7 @@ const getDay = (_) => {
   return getTodayDate().getUTCDay();
 };
 
-labelDay.textContent = weekDays[getDay()];
+labelDay.textContent = Days[getDay()];
 setInterval(() => {
   labelTime.textContent = new Date().getTime();
 }, 1000)
