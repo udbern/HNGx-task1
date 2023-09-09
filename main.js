@@ -1,25 +1,13 @@
-const labelDay = document.querySelector(".currentDay");
-const labelTime = document.querySelector(".currentUTC");
+function updateDateTime() {
+  const dayOfWeek = new Date().toLocaleDateString("en-US", { weekday: "long" });
+  const utcTimeInMillis = new Date().getTime();
 
-const Days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+  
+  document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent =
+    dayOfWeek;
+  document.querySelector('[data-testid="currentUTCTime"]').textContent =
+    utcTimeInMillis;
+}
 
-const getTodayDate = (_) => {
-  return new Date();
-};
-
-const getDay = (_) => {
-  return getTodayDate().getUTCDay();
-};
-
-labelDay.textContent = Days[getDay()];
-setInterval(() => {
-  labelTime.textContent = new Date().getTime();
-}, 1000)
+updateDateTime();
+setInterval(updateDateTime, 1000);
